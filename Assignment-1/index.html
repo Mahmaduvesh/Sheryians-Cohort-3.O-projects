@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Gen I - Pikachu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="slider-card">
+      <section class="left-panel">
+        <div class="pokeball-watermark">
+          <svg
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="currentColor"
+              stroke-width="8"
+            />
+            <line
+              x1="5"
+              y1="50"
+              x2="95"
+              y2="50"
+              stroke="currentColor"
+              stroke-width="8"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="18"
+              fill="#ffcb05"
+              stroke="currentColor"
+              stroke-width="8"
+            />
+            <circle cx="50" cy="50" r="6" fill="currentColor" />
+          </svg>
+        </div>
+
+        <header class="header">
+          <img
+            class="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+            alt="Pokémon Logo"
+          />
+        </header>
+
+        <article class="content">
+          <span class="category-tag">POKEMON GEN I</span>
+          <h1 class="pokemon-name">Pikachu</h1>
+          <p class="description">
+            Pikachu is an Electric-type Pokémon introduced in Generation I.
+            Pikachu are small, chubby, and incredibly cute mouse-like Pokémon.
+            They are almost completely covered by yellow fur.
+          </p>
+        </article>
+
+        <footer class="footer">
+          <div class="counter">
+            <span class="line"></span>
+            <span class="number">01 / 08</span>
+          </div>
+        </footer>
+      </section>
+
+      <section class="right-panel">
+        <nav class="navigation">
+          <button class="menu-btn" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </nav>
+
+        <div
+          class="pagination"
+          role="navigation"
+          aria-label="Slider Pagination"
+        >
+          <button class="dot active" aria-label="Slide 1"></button>
+          <button class="dot" aria-label="Slide 2"></button>
+          <button class="dot" aria-label="Slide 3"></button>
+          <button class="dot" aria-label="Slide 4"></button>
+          <button class="dot" aria-label="Slide 5"></button>
+        </div>
+      </section>
+
+      <div class="character-wrapper">
+        <img
+          src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+          alt="Pikachu artwork"
+          class="character-img"
+        />
+      </div>
+    </main>
+  </body>
+</html>
