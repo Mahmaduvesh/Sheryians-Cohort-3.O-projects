@@ -1,0 +1,271 @@
+/* --- Reset and Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif; /* Replace with your custom project font */
+  background-color: #1e1b24;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 750px;
+  background: url("./images/Background.png") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar Layout */
+.navbar {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo img {
+  height: 8rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #ffbf69;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+  color: #ffbf69;
+  transform: translateY(-2px);
+}
+
+/* Hero Typography Text styling */
+.hero-content {
+  text-align: center;
+  margin-top: 60px;
+  /* z-index: 5; */
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.main-title {
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 5px 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  z-index: 4;
+}
+
+.tagline {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  text-align: right;
+}
+
+/* Character & CTA Button Layering */
+.character-container {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 4;
+}
+
+.hero-character {
+  max-height: 450px;
+  object-fit: contain;
+}
+
+.mint-btn {
+  position: absolute;
+  bottom: 120px; /* Places button over the character's midsection */
+  background-color: #f1d36e;
+  color: #000000;
+  border: none;
+  padding: 14px 45px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.mint-btn:hover {
+  background-color: #ffe082;
+  transform: scale(1.05);
+}
+
+/* The Curved Background Cutout */
+.u-curve-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2;
+}
+
+.u-curve-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 160px;
+}
+
+.vision-section {
+  background-color: #201b24;
+  padding-top: 70px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Layering the Character perfectly into the dip */
+.character-container {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* --- Vision Section --- */
+.vision-section {
+  background-color: #201b24;
+  padding: 60px 20px 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+/* Elegant Section Title */
+.section-title-container {
+  text-align: center;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.section-title {
+  font-size: 36px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.title-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5ba73, transparent);
+  width: 100%;
+}
+
+.diamond {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 9px;
+  height: 9px;
+  background-color: #e5ba73;
+  border: 1px solid #201b24;
+}
+
+/* Two-column Text Split */
+.vision-content {
+  display: flex;
+  max-width: 1100px;
+  gap: 50px;
+  justify-content: center;
+}
+
+.content-col {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbc6d0;
+}
+
+.content-col strong {
+  color: #ffffff;
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .main-title {
+    font-size: 44px;
+  }
+
+  .vision-content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+}

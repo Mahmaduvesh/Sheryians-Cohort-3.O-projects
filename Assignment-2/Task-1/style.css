@@ -26,8 +26,7 @@ img {
   margin: auto;
 }
 
-/* ================= TITLE ================= */
-
+/* --- Header Section --- */
 .title-section {
   text-align: center;
   padding: 50px 0 30px;
@@ -59,8 +58,7 @@ img {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-/* ================= CARDS ================= */
-
+/* --- Grid Menu Cards --- */
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -126,12 +124,11 @@ img {
   font-weight: 600;
 }
 
-/* ================= CHEF SECTION ================= */
+/* --- Chef Showcase --- */
 .chef-section {
   margin-top: 50px;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800' fill='none' stroke='%23ff8c00' stroke-width='1.5' stroke-opacity='0.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M400 750C400 750 395 550 410 350C418 250 430 150 435 50'/%3E%3Cpath d='M410 500C450 480 580 430 650 450C580 380 480 380 412 430'/%3E%3Cpath d='M412 430C480 350 630 280 700 320C610 260 500 290 415 365'/%3E%3Cpath d='M415 365C480 230 600 130 680 180C580 140 480 200 420 280'/%3E%3Cpath d='M420 280C470 120 550 40 600 90C510 70 440 160 425 210'/%3E%3Cpath d='M405 530C360 510 230 460 160 480C230 410 330 410 398 460'/%3E%3Cpath d='M398 460C330 380 180 310 110 350C200 290 310 320 395 395'/%3E%3Cpath d='M395 395C330 260 210 160 130 210C230 170 330 230 390 310'/%3E%3Cpath d='M390 310C340 150 260 70 210 120C300 100 370 190 385 240'/%3E%3C/svg%3E")
-      no-repeat right center / contain,
+    url("images/chef-pattern.png") no-repeat right center / contain,
     #0c0b0b;
   border-radius: 30px;
   padding: 50px 60px;
@@ -145,14 +142,11 @@ img {
 }
 
 .chef-image img {
-  width: 100%;
   height: auto;
   border-radius: 25px;
-  display: block;
   object-fit: cover;
 }
 
-/* Subtle accent line next to the tag */
 .chef-tag {
   color: #ff8c00;
   letter-spacing: 4px;
@@ -176,11 +170,8 @@ img {
   font-family: "Cinzel", serif;
   margin: 15px 0;
   line-height: 1.2;
-  color: #ffffff;
-  font-weight: 500;
 }
 
-/* Styled to match the lighter, elegant sub-heading */
 .chef-sub {
   color: #e0e0e0;
   font-size: 18px;
@@ -188,7 +179,6 @@ img {
   margin-bottom: 20px;
 }
 
-/* Styled for the longer paragraph block */
 .chef-desc {
   color: #888888;
   font-size: 16px;
@@ -197,7 +187,6 @@ img {
   max-width: 650px;
 }
 
-/* Elegant Pill-shaped Outlined Button */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -206,7 +195,6 @@ img {
   color: #ff8c00;
   padding: 14px 32px;
   border-radius: 50px;
-  text-decoration: none;
   font-size: 15px;
   font-weight: 500;
   transition: all 0.4s ease;
@@ -226,25 +214,7 @@ img {
   transform: translateX(5px);
 }
 
-/* Responsive adjustment for tablets/mobile */
-@media (max-width: 992px) {
-  .chef-section {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 30px;
-    background:
-      url("leaf-bg.png") no-repeat bottom right / 50%,
-      #0d0d0d;
-  }
-
-  .chef-image img {
-    max-width: 350px;
-    margin: 0 auto;
-  }
-}
-
-/* ================= FOOTER ================= */
-
+/* --- Footer --- */
 footer {
   border-top: 1px solid rgba(255, 140, 0, 0.2);
   margin-top: 50px;
@@ -287,7 +257,22 @@ footer {
   color: #000;
 }
 
-/* ================= RESPONSIVE ================= */
+/* --- Responsive Layout --- */
+@media (max-width: 992px) {
+  .chef-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+    background:
+      url("images/chef-pattern.png") no-repeat bottom right / 50%,
+      #0d0d0d;
+  }
+
+  .chef-image img {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
 
 @media (max-width: 768px) {
   .title-section h1 {

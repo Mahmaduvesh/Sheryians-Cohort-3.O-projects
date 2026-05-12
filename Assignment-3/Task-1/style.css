@@ -1,0 +1,152 @@
+/* Reset & Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  /* Updated deep neon violet-to-dark radial gradient */
+  background: radial-gradient(
+    circle at 10% 20%,
+    #2f0b40 0%,
+    #11052c 45%,
+    #050212 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 40px;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  width: 1100px;
+  position: relative;
+}
+
+/* Header Elements using absolute and flex positioning */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.see-all {
+  color: #b0aebb;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.see-all:hover {
+  color: #ffffff;
+}
+
+/* Grid Layout using Flex Wrap */
+.art-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Card Styling with Glassmorphism Effect */
+.art-card {
+  width: calc(
+    25% - 18px
+  ); /* Ensures exactly 4 cards per row accounting for gap */
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+/* Image Wrapper */
+.image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background-color: #1a153a;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Info Row containing Name & Likes */
+.info-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.art-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e5e5e7;
+}
+
+.likes-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.likes-count {
+  font-size: 12px;
+  color: #8a8894;
+}
+
+.heart-icon {
+  font-size: 14px;
+  color: #8a8894;
+  cursor: pointer;
+}
+
+/* Place Bid Button Styling */
+.bid-btn {
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid #8c52ff;
+  color: #ffffff;
+  padding: 12px 0;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.bid-btn:hover {
+  background: #8c52ff;
+  box-shadow: 0 0 12px rgba(140, 82, 255, 0.5);
+}

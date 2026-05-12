@@ -8,11 +8,10 @@ html,
 body {
   width: 100%;
   min-height: 100%;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
 }
 
-/* main  */
 .main {
   min-height: 100vh;
   width: 100%;
@@ -20,10 +19,11 @@ body {
   position: relative;
 }
 
+/* --- Left Text Layout --- */
 .text-container {
   width: 50%;
   min-height: 100vh;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -60,7 +60,11 @@ body {
   align-items: flex-start;
   gap: 18px;
   padding: 20px 0;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.item:last-child {
+  border-bottom: none;
 }
 
 .dot {
@@ -82,14 +86,10 @@ body {
 .text p {
   font-size: 14px;
   color: #333;
-  font-weight: 400;
   line-height: 1.5;
 }
 
-.item:last-child {
-  border-bottom: none;
-}
-
+/* --- Right Panels --- */
 .description-container {
   width: 50%;
   min-height: 100vh;
@@ -114,7 +114,7 @@ body {
   width: 250px;
   font-size: 45px;
   color: white;
-  margin: 0px 40px;
+  margin: 0 40px;
   font-family: "Times New Roman", Times, serif;
   font-weight: 200;
   line-height: 1.2;
@@ -129,7 +129,6 @@ body {
 
 .insectStruct {
   width: 50%;
-  min-height: 100%;
   position: relative;
 }
 
@@ -146,7 +145,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: rgb(232, 232, 196);
+  color: #e8e8c4;
 }
 
 .inner-spaces {
@@ -167,10 +166,11 @@ body {
 .line {
   width: 2px;
   height: 60%;
-  margin: 32px 0px;
-  background-color: rgb(158, 158, 138);
+  margin: 32px 0;
+  background-color: #9e9e8a;
 }
 
+/* --- Card & Buttons --- */
 .card {
   width: 350px;
   max-width: 100%;
@@ -232,19 +232,20 @@ body {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.03);
 }
 
+/* --- Navigation --- */
 .navbar {
   position: absolute;
-  top: 0%;
+  top: 0;
   left: 0;
   width: 100%;
-  min-height: 80px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -260,17 +261,16 @@ body {
 .search {
   width: 250px;
   height: 40px;
-  background-color: rgb(231, 228, 228);
+  background-color: #e7e4e4;
   border-radius: 20px;
   padding: 10px 25px;
   display: flex;
   align-items: center;
-  color: rgb(92, 91, 91);
-  margin: 0px 380px 0px 0px;
+  color: #5c5b5b;
 }
 
 .search p {
-  margin: 0px 15px;
+  margin: 0 15px;
   font-size: 18px;
   font-weight: 200;
 }
@@ -281,25 +281,21 @@ body {
 
 .navbar ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 40px;
+  list-style: none;
 }
 
 .navbar ul li {
   font-size: 16px;
-  list-style: none;
   color: white;
   cursor: pointer;
-  transition: all ease 0.2s;
+  transition: 0.2s;
   font-weight: 300;
 }
 
 .navbar ul li:hover {
-  color: rgb(209, 194, 194);
+  color: #d1c2c2;
 }
-
-/* Main hero Insect image  */
 
 .insectBigImage img {
   width: 400px;
@@ -312,16 +308,12 @@ body {
   z-index: 5;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
+/* --- Media Queries --- */
 @media (max-width: 1200px) {
   .insectBigImage img {
     width: 320px;
     right: 34%;
   }
-
   .description-container-inner {
     width: 65%;
   }
@@ -331,45 +323,34 @@ body {
   .main {
     flex-direction: column;
   }
-
   .text-container,
   .description-container {
     width: 100%;
   }
-
   .text-container {
-    min-height: auto;
     padding: 120px 40px 60px;
   }
-
   .description-container {
     padding: 100px 20px 50px;
   }
-
   .description-container-inner {
     position: relative;
-    top: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .insectBigImage img {
     position: relative;
-    top: auto;
-    right: auto;
     width: 300px;
     height: auto;
     margin: 30px auto;
     display: block;
   }
-
   .navbar {
     flex-wrap: wrap;
     gap: 20px;
   }
-
   .navbar ul li {
     color: black;
   }
@@ -378,62 +359,46 @@ body {
 @media (max-width: 768px) {
   .text-container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
-
   .text-left-container,
   .text-right-container {
     width: 100%;
   }
-
   .text-left-container h1 {
     writing-mode: horizontal-tb;
-    transform: rotate(0deg);
+    transform: none;
     font-size: 45px;
   }
-
   .text-right-container {
     margin-top: 20px;
   }
-
   .description-container h1 {
     width: 100%;
     text-align: center;
     font-size: 38px;
     margin: 0;
   }
-
   .specification {
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-
   .spaces {
     width: 100%;
     justify-content: center;
     gap: 20px;
   }
-
-  .card {
+  .card,
+  .btn,
+  .search,
+  .navbar ul {
     width: 100%;
   }
-
-  .btn {
-    width: 100%;
-  }
-
   .navbar {
     padding: 15px 20px;
   }
-
-  .search {
-    width: 100%;
-  }
-
   .navbar ul {
-    width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
@@ -444,27 +409,21 @@ body {
   .text-left-container h1 {
     font-size: 34px;
   }
-
   .description-container h1 {
     font-size: 30px;
   }
-
   .price {
     font-size: 28px;
   }
-
   .navbar {
     position: relative;
   }
-
   .logo {
     font-size: 24px;
   }
-
   .search p {
     font-size: 14px;
   }
-
   .insectBigImage img {
     width: 220px;
   }
