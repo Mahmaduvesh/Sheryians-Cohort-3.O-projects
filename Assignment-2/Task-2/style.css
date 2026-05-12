@@ -1,0 +1,471 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Roboto";
+  overflow-x: hidden;
+}
+
+/* main  */
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.text-container {
+  width: 50%;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+  gap: 30px;
+}
+
+.text-left-container {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-left-container h1 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 60px;
+  font-style: italic;
+  color: #0d2d27;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.text-right-container {
+  width: 55%;
+  margin-top: 60px;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #b93333;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.text h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.text p {
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.description-container {
+  width: 50%;
+  min-height: 100vh;
+  background-color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.description-container-inner {
+  position: absolute;
+  top: 18%;
+  width: 50%;
+  min-height: 70%;
+  z-index: 2;
+}
+
+.description-container h1 {
+  width: 250px;
+  font-size: 45px;
+  color: white;
+  margin: 0px 40px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 200;
+  line-height: 1.2;
+}
+
+.specification {
+  width: 300px;
+  min-height: 200px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.insectStruct {
+  width: 50%;
+  min-height: 100%;
+  position: relative;
+}
+
+.insectStruct img {
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spaces {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: rgb(232, 232, 196);
+}
+
+.inner-spaces {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.spaces-left {
+  gap: 40px;
+  margin: 20px;
+}
+
+.spaces-left i {
+  font-size: 25px;
+}
+
+.line {
+  width: 2px;
+  height: 60%;
+  margin: 32px 0px;
+  background-color: rgb(158, 158, 138);
+}
+
+.card {
+  width: 350px;
+  max-width: 100%;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: brown;
+  color: white;
+  margin-top: 20px;
+}
+
+.price {
+  font-size: 35px;
+  font-weight: 500;
+  color: #f5ddb5;
+  margin-bottom: 25px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.toggle {
+  width: 30px;
+  height: 18px;
+  border-radius: 50px;
+  background: #d9b5b5;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toggle::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 1px;
+  left: 2px;
+}
+
+.option p {
+  font-size: 15px;
+  color: #f3e7e7;
+}
+
+.btn {
+  width: 70%;
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #ead3a7;
+  color: #222;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.navbar {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.search {
+  width: 250px;
+  height: 40px;
+  background-color: rgb(231, 228, 228);
+  border-radius: 20px;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  color: rgb(92, 91, 91);
+  margin: 0px 380px 0px 0px;
+}
+
+.search p {
+  margin: 0px 15px;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.search i {
+  margin: 2px;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar ul li {
+  font-size: 16px;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  font-weight: 300;
+}
+
+.navbar ul li:hover {
+  color: rgb(209, 194, 194);
+}
+
+/* Main hero Insect image  */
+
+.insectBigImage img {
+  width: 400px;
+  max-width: 100%;
+  height: 550px;
+  object-fit: contain;
+  position: absolute;
+  top: 15%;
+  right: 37%;
+  z-index: 5;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1200px) {
+  .insectBigImage img {
+    width: 320px;
+    right: 34%;
+  }
+
+  .description-container-inner {
+    width: 65%;
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .text-container,
+  .description-container {
+    width: 100%;
+  }
+
+  .text-container {
+    min-height: auto;
+    padding: 120px 40px 60px;
+  }
+
+  .description-container {
+    padding: 100px 20px 50px;
+  }
+
+  .description-container-inner {
+    position: relative;
+    top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .insectBigImage img {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 300px;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .navbar ul li {
+    color: black;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-left-container,
+  .text-right-container {
+    width: 100%;
+  }
+
+  .text-left-container h1 {
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    font-size: 45px;
+  }
+
+  .text-right-container {
+    margin-top: 20px;
+  }
+
+  .description-container h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 38px;
+    margin: 0;
+  }
+
+  .specification {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .spaces {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .navbar ul {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-left-container h1 {
+    font-size: 34px;
+  }
+
+  .description-container h1 {
+    font-size: 30px;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .search p {
+    font-size: 14px;
+  }
+
+  .insectBigImage img {
+    width: 220px;
+  }
+}

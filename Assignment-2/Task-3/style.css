@@ -1,0 +1,358 @@
+/* =========================
+   Reset
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Body
+========================= */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* =========================
+   Container
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 30px;
+}
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 10px 0;
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* Logo Shape */
+
+.logo-icon {
+  width: 35px;
+  height: 25px;
+  background-color: #fff;
+
+  clip-path: polygon(
+    0 50%,
+    25% 0,
+    50% 0,
+    25% 50%,
+    50% 50%,
+    75% 0,
+    100% 0,
+    75% 50%,
+    50% 100%,
+    25% 100%
+  );
+}
+
+/* Nav Links */
+
+.nav-links {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff5c00;
+}
+
+/* Button */
+
+.nav-btn {
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: #151515;
+  color: #fff;
+
+  font-size: 17px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #ff5c00;
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+  padding: 60px 0 60px;
+}
+
+.hero-title {
+  font-size: 104px;
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: -2px;
+
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* =========================
+   Category Buttons
+========================= */
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 50px;
+
+  background-color: #111;
+  color: #fff;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.category-btn:hover {
+  background-color: #ff5c00;
+}
+
+.category-btn.active {
+  background-color: #ff5c00;
+}
+
+/* cards */
+
+/* =========================
+   Blog Section
+========================= */
+
+.blog-section {
+  padding: 40px 0 100px;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Blog Card
+========================= */
+
+.blog-card {
+  width: 100%;
+  max-width: 360px;
+
+  background: #151515;
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  transition: 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================
+   Blog Image
+========================= */
+
+.blog-image {
+  width: 100%;
+  height: 260px;
+
+  overflow: hidden;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  transition: 0.4s ease;
+}
+
+.blog-card:hover .blog-image img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   Blog Content
+========================= */
+
+.blog-content {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+/* Tag */
+
+.blog-tag {
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  background-color: #3b1608;
+  color: #ff7a1a;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Title */
+
+.blog-title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+
+  color: #fff;
+}
+
+/* Date */
+
+.blog-date {
+  font-size: 18px;
+  color: #7d7d7d;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 992px) {
+  .blog-container {
+    justify-content: center;
+  }
+
+  .blog-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-image {
+    height: 220px;
+  }
+
+  .blog-title {
+    font-size: 20px;
+  }
+
+  .blog-date {
+    font-size: 16px;
+  }
+}
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .category-btn {
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+}

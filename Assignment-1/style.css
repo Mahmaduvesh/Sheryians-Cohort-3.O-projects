@@ -2,8 +2,8 @@
    1. Reset & Base Variables
    ========================================================================== */
 :root {
-  --color-primary: #ffcb05; /* Pikachu Yellow */
-  --color-bg-light: #f5eedc; /* Soft off-white right panel */
+  --color-primary: #ffcb05;
+  --color-bg-light: #f5eedc;
   --color-text-dark: #000000;
   --color-text-muted: #333333;
   --font-main: "Inter", sans-serif;
@@ -20,11 +20,14 @@
 
 body {
   font-family: var(--font-main);
-  background-color: #e5e5e5; /* Gray page background to make the card stand out */
+  background-color: #e5e5e5;
   min-height: 100vh;
+
+  /* Flex Center */
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 20px;
 }
 
@@ -33,40 +36,53 @@ body {
    ========================================================================== */
 .slider-card {
   position: relative;
+
   width: 100%;
   max-width: 1100px;
-  height: 720px;
-  background-color: transparent;
+  min-height: 680px;
+
   border-radius: var(--border-radius-card);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
-  /* Split layout */
-  display: grid;
-  grid-template-columns: 60% 40%;
+  background-color: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+
+  /* Main Layout Using Flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 /* ==========================================================================
-   3. Left Panel (Yellow Side)
+   3. Left Panel
    ========================================================================== */
 .left-panel {
+  position: relative;
+
+  width: 60%;
   background-color: var(--color-primary);
-  padding: 50px 60px 60px 80px;
+
+  padding: 55px 70px;
+
+  overflow: hidden;
+
+  /* Flex Layout */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  overflow: hidden;
+  align-items: flex-start;
 }
 
-/* Watermark Background Styling */
+/* Watermark */
 .pokeball-watermark {
   position: absolute;
-  bottom: -60px;
-  left: -40px;
-  width: 320px;
-  height: 320px;
-  color: rgba(0, 0, 0, 0.05); /* Very subtle overlay */
+  bottom: -120px;
+  left: 40px;
+
+  width: 250px;
+  height: 250px;
+
+  opacity: 0.08;
   pointer-events: none;
 }
 
@@ -75,23 +91,37 @@ body {
   height: 100%;
 }
 
-/* Header & Logo */
+/* Header */
 .header {
   position: relative;
   z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .logo {
-  height: 48px;
   width: auto;
+  height: 50px;
 }
 
-/* Text Content Area */
+/* Content */
 .content {
   position: relative;
   z-index: 2;
-  max-width: 360px;
-  margin-top: 20px;
+
+  max-width: 380px;
+
+  /* Flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 22px;
 }
 
 .category-tag {
@@ -99,41 +129,41 @@ body {
   font-weight: 900;
   letter-spacing: 4px;
   color: var(--color-text-dark);
-  display: block;
-  margin-bottom: 20px;
 }
 
 .pokemon-name {
-  font-size: 84px;
+  font-size: 82px;
   font-weight: 900;
   line-height: 0.95;
-  color: var(--color-text-dark);
   letter-spacing: -2px;
-  margin-bottom: 28px;
+  color: var(--color-text-dark);
 }
 
 .description {
-  font-size: 14.5px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.8;
   color: var(--color-text-muted);
   font-weight: 500;
 }
 
-/* Footer Counter */
+/* Footer */
 .footer {
   position: relative;
   z-index: 2;
+
+  width: 100%;
 }
 
 .counter {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+
   gap: 16px;
 }
 
 .counter .line {
-  display: inline-block;
-  width: 32px;
+  width: 35px;
   height: 2px;
   background-color: var(--color-text-dark);
 }
@@ -141,75 +171,90 @@ body {
 .counter .number {
   font-size: 15px;
   font-weight: 700;
-  color: var(--color-text-dark);
   letter-spacing: 1px;
+  color: var(--color-text-dark);
 }
 
 /* ==========================================================================
-   4. Right Panel (Light Cream Side)
+   4. Right Panel
    ========================================================================== */
 .right-panel {
+  position: relative;
+
+  width: 40%;
   background-color: var(--color-bg-light);
+
   padding: 50px 40px;
+
+  /* Flex Layout */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
-/* Navigation Burger Menu */
+/* Navigation */
 .navigation {
   position: relative;
   z-index: 2;
 }
 
 .menu-btn {
-  background: none;
   border: none;
+  background: transparent;
   cursor: pointer;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
   gap: 6px;
-  padding: 10px;
 }
 
 .menu-btn .bar {
-  display: block;
   width: 32px;
   height: 3px;
+
+  border-radius: 50px;
   background-color: var(--color-text-dark);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+
+  transition: 0.3s ease;
 }
 
-/* Slider Dots Pagination */
+/* Pagination */
 .pagination {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: auto;
-  margin-bottom: auto;
   position: relative;
   z-index: 2;
+
+  flex: 1;
+
+  /* Flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
 }
 
 .dot {
-  background: none;
+  width: 10px;
+  height: 10px;
+
   border: none;
-  cursor: pointer;
-  width: 8px;
-  height: 8px;
   border-radius: 50%;
+
+  cursor: pointer;
+
   background-color: rgba(0, 0, 0, 0.25);
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
+
+  transition: 0.3s ease;
 }
 
 .dot.active {
-  background-color: var(--color-text-dark);
   transform: scale(1.3);
+  background-color: var(--color-text-dark);
 }
 
 .dot:hover {
@@ -217,50 +262,115 @@ body {
 }
 
 /* ==========================================================================
-   5. Character Image Layer (Floating absolute wrapper)
+   5. Character Image Layer
    ========================================================================== */
 .character-wrapper {
   position: absolute;
+
   top: 50%;
   left: 62%;
+
   transform: translate(-50%, -50%);
-  width: 480px;
-  pointer-events: none; /* Allows clicking things behind transparent areas of image */
+
+  width: 500px;
+
   z-index: 10;
+
+  pointer-events: none;
+
+  /* Flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .character-img {
   width: 100%;
   height: auto;
   display: block;
-  /* Very slight drop shadow for natural depth over the background line */
-  filter: drop-shadow(4px 10px 15px rgba(0, 0, 0, 0.06));
+
+  filter: drop-shadow(4px 12px 20px rgba(0, 0, 0, 0.08));
 }
 
 /* ==========================================================================
-   6. Responsive Styling (Mobile optimization)
+   6. Responsive Design
    ========================================================================== */
 @media (max-width: 900px) {
   .slider-card {
-    grid-template-columns: 100%;
-    height: auto;
-    max-width: 480px;
+    flex-direction: column;
+    min-height: auto;
+    max-width: 500px;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
   }
 
   .left-panel {
-    padding: 40px 30px;
+    padding: 40px 30px 80px;
+
+    gap: 40px;
   }
 
   .right-panel {
     display: none;
   }
 
+  .content {
+    max-width: 100%;
+  }
+
+  .pokemon-name {
+    font-size: 60px;
+  }
+
   .character-wrapper {
     position: relative;
+
     top: auto;
     left: auto;
+
     transform: none;
-    width: 80%;
-    margin: -40px auto 20px auto;
+
+    width: 85%;
+
+    margin: -40px auto 20px;
+
+    justify-content: center;
+  }
+
+  .pokeball-watermark {
+    width: 180px;
+    height: 180px;
+
+    left: 20px;
+    bottom: -70px;
+  }
+}
+
+/* ==========================================================================
+   7. Small Mobile Devices
+   ========================================================================== */
+@media (max-width: 500px) {
+  body {
+    padding: 12px;
+  }
+
+  .left-panel {
+    padding: 30px 22px 70px;
+  }
+
+  .pokemon-name {
+    font-size: 48px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .character-wrapper {
+    width: 100%;
   }
 }
