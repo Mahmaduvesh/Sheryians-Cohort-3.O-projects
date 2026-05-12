@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokémon Gen I - Pikachu</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,8 +14,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="slider-card">
-      <section class="left-panel">
+    <div class="slider-card">
+      <div class="left-panel">
         <div class="pokeball-watermark">
           <svg
             viewBox="0 0 100 100"
@@ -48,15 +49,15 @@
           </svg>
         </div>
 
-        <header class="header">
+        <div class="header">
           <img
             class="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
             alt="Pokémon Logo"
           />
-        </header>
+        </div>
 
-        <article class="content">
+        <div class="content">
           <span class="category-tag">POKEMON GEN I</span>
           <h1 class="pokemon-name">Pikachu</h1>
           <p class="description">
@@ -68,40 +69,34 @@
             <span class="line"></span>
             <span class="number">01 / 08</span>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <footer class="footer"></footer>
-      </section>
-
-      <section class="right-panel">
-        <nav class="navigation">
-          <button class="menu-btn" aria-label="Toggle Menu">
+      <div class="right-panel">
+        <div class="navigation">
+          <button class="menu-btn">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
           </button>
-        </nav>
-
-        <div
-          class="pagination"
-          role="navigation"
-          aria-label="Slider Pagination"
-        >
-          <button class="dot active" aria-label="Slide 1"></button>
-          <button class="dot" aria-label="Slide 2"></button>
-          <button class="dot" aria-label="Slide 3"></button>
-          <button class="dot" aria-label="Slide 4"></button>
-          <button class="dot" aria-label="Slide 5"></button>
         </div>
-      </section>
+
+        <div class="pagination">
+          <button class="dot active"></button>
+          <button class="dot"></button>
+          <button class="dot"></button>
+          <button class="dot"></button>
+          <button class="dot"></button>
+        </div>
+      </div>
 
       <div class="character-wrapper">
         <img
           src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
-          alt="Pikachu artwork"
+          alt="Pikachu"
           class="character-img"
         />
       </div>
-    </main>
+    </div>
   </body>
 </html>
