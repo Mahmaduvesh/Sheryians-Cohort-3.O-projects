@@ -1,4 +1,3 @@
-/* --- Reset and Global Styles --- */
 * {
   margin: 0;
   padding: 0;
@@ -6,29 +5,41 @@
 }
 
 body {
-  font-family: "Arial", sans-serif; /* Replace with your custom project font */
+  font-family: "Arial", sans-serif;
   background-color: #1e1b24;
   color: #ffffff;
   overflow-x: hidden;
 }
 
-/* --- Hero Section --- */
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 750px;
-  background: url("./images/Background.png") no-repeat center center/cover;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Navbar Layout */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./images/Background.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+  /* opacity: 0.5; */
+  z-index: -1;
+  filter: blur(4px);
+}
+
 .navbar {
   width: 100%;
-  max-width: 1000px;
-  padding: 0px 60px;
+  max-width: 1200px;
+  padding: 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,29 +47,33 @@ body {
 }
 
 .logo img {
-  height: 8rem;
+  height: 10rem;
+  padding-top: 10px;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 25px;
+  gap: 20px;
+}
+
+.nav-links li {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li.active {
+  background-color: rgba(139, 115, 92, 0.4);
+  border-radius: 4px;
 }
 
 .nav-links a {
-  color: #e0e0e0;
+  color: #fff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.3s;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-  color: #ffbf69;
-}
-
-/* Social Icons */
 .social-icons {
   display: flex;
   gap: 15px;
@@ -78,14 +93,13 @@ body {
   transform: translateY(-2px);
 }
 
-/* Hero Typography Text styling */
 .hero-content {
   text-align: center;
-  margin-top: 60px;
-  /* z-index: 5; */
+  margin-top: 130px;
 }
 
 .subtitle {
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -94,6 +108,7 @@ body {
 }
 
 .main-title {
+  font-family: "Syncopate", sans-serif;
   font-size: 72px;
   font-weight: 900;
   letter-spacing: 4px;
@@ -103,22 +118,23 @@ body {
 }
 
 .tagline {
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   letter-spacing: 2px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   text-align: right;
 }
 
-/* Character & CTA Button Layering */
 .character-container {
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 4;
+  pointer-events: none;
 }
 
 .hero-character {
@@ -128,7 +144,7 @@ body {
 
 .mint-btn {
   position: absolute;
-  bottom: 120px; /* Places button over the character's midsection */
+  bottom: 145px;
   background-color: #f1d36e;
   color: #000000;
   border: none;
@@ -142,6 +158,7 @@ body {
   transition:
     transform 0.2s,
     background-color 0.2s;
+  pointer-events: auto;
 }
 
 .mint-btn:hover {
@@ -149,7 +166,6 @@ body {
   transform: scale(1.05);
 }
 
-/* The Curved Background Cutout */
 .u-curve-divider {
   position: absolute;
   bottom: 0;
@@ -157,37 +173,18 @@ body {
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  z-index: 2;
+  z-index: 6;
 }
 
 .u-curve-divider svg {
-  position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: 160px;
+  width: 100%;
+  height: 100px;
 }
 
 .vision-section {
   background-color: #201b24;
-  padding-top: 70px;
-  position: relative;
-  z-index: 3;
-}
-
-/* Layering the Character perfectly into the dip */
-.character-container {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-  pointer-events: none;
-}
-
-/* --- Vision Section --- */
-.vision-section {
-  background-color: #201b24;
-  padding: 60px 20px 100px 20px;
+  padding: 0 20px 100px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,7 +192,6 @@ body {
   z-index: 3;
 }
 
-/* Elegant Section Title */
 .section-title-container {
   text-align: center;
   margin-bottom: 50px;
@@ -227,7 +223,6 @@ body {
   border: 1px solid #201b24;
 }
 
-/* Two-column Text Split */
 .vision-content {
   display: flex;
   max-width: 1100px;
@@ -246,7 +241,6 @@ body {
   color: #ffffff;
 }
 
-/* Responsive Handling */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
