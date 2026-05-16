@@ -1,0 +1,947 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Main Dashboard Grid Layout */
+main {
+  min-height: 110vh;
+  width: 100%;
+  background-color: #000000;
+  display: grid;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  padding-bottom: 100px;
+  
+
+  /* grid-template-columns: 20% 18% 7% 25% 20%; */
+  /* grid-template-rows: 29% 24% 10% 20% 18%; */
+
+
+  grid-template-columns: 22% 20% 7% 27% 22%;
+  grid-template-rows: 25% 8% 8% 20% 18%;
+  grid-template-areas:
+    "left-top    top-center1    top-center1    top-center2    right-top"
+    "left-top    center         center         center         right-top"
+    "left-top center         center         center         right-top"
+    "left-bottom center         center         center         right-bottom"
+    "left-bottom bottom-center1 bottom-center2 bottom-center2 right-bottom";
+}
+
+/* Global Shared Styles */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111111;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.heart-icon {
+  font-size: 1.2rem;
+}
+
+/* Growth Trend Elements */
+.trend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.trend.positive {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trend.positive button {
+  background-color: #ffeef1;
+  color: #ff5e7e;
+  border: none;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.trend.positive button:hover {
+  opacity: 0.9;
+}
+
+.trend-sub {
+  color: #757575;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+
+/* Left Top Pink Progress Card */
+.left-top {
+  grid-area: left-top;
+  background-color: #fdebee;
+  border-radius: 24px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.left-top .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left-top .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+}
+
+.left-top .dots {
+  font-size: 1.5rem;
+  color: #222222;
+  cursor: pointer;
+  line-height: 0.5;
+}
+
+.left-top .progress-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.left-top .progress-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: conic-gradient(#ff5e7e 0% 75%, #f4ccd3 75% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.left-top .progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 106px;
+  height: 106px;
+  background-color: #fdebee;
+  border-radius: 50%;
+}
+
+.left-top .progress-value, 
+.left-top .progress-label {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.left-top .progress-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.left-top .progress-label {
+  font-size: 0.75rem;
+  color: #666666;
+  margin-top: 2px;
+}
+
+.left-top .stats-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-top .total-number {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 1px;
+}
+
+.left-top .description {
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.left-top .view-button {
+  background-color: #ffffff;
+  color: #111111;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.left-top .view-button:hover {
+  opacity: 0.9;
+}
+
+.left-top .view-button span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+
+/* Left Bottom Dark Agency Card */
+.left-bottom {
+  grid-area: left-bottom;
+  background-color: #16161a;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.left-bottom .card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.left-bottom .arrow-diagonal {
+  background-color: #29292e;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.left-bottom .arrow-diagonal:hover {
+  background-color: #3a3a42;
+}
+
+.left-bottom .agency-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.left-bottom .image-box {
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  height: 120px;
+  width: 140px;
+}
+
+.left-bottom .img-one {
+  background-image: url('./images/img2.png');
+}
+
+.left-bottom .img-two {
+  background-image: url('./images/img7.png');
+}
+
+.left-bottom .agency-footer {
+  display: flex;
+  align-items: center;
+}
+
+.left-bottom .team-thumbs {
+  display: flex;
+  align-items: center;
+}
+
+.left-bottom .thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #16161a;
+  margin-right: -6px;
+  background-size: cover;
+}
+
+.left-bottom .color-1 { background-image: url('./images/img11.png'); }
+.left-bottom .color-2 { background-image: url('./images/img22.png'); }
+.left-bottom .color-3 { background-image: url('./images/img33.png'); }
+
+.left-bottom .thumb-add {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ff5e7e;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid #16161a;
+  cursor: pointer;
+}
+
+
+/* Top Center 1 Stat Card */
+.top-center1 {
+  grid-area: top-center1;
+  background-color: #fcf8f8;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.card-header h2{
+  font-size: 3rem;
+}
+
+.heart-btn {
+  background-color: #FCDFE1;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: 5px;
+  border-radius: 50%;
+}
+
+.heart-icon {
+  font-size: 22px;
+}
+
+.top-center1-title {
+  font-weight: 500; 
+  color: #222222;
+}
+
+
+/* Remainder Grid Base Selectors */
+/* Top Center 2: New Users Card Component */
+.top-center2 { 
+  grid-area: top-center2;
+  background-color: #ffffff; /* Replaced tomato with clean white */
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  /* Layer Stack Alignment */
+  position: relative;
+  z-index: 1; /* Retained so the center portrait component floats safely over it */
+}
+
+/* Card Upper Content Positioning */
+.top-center2 .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.top-center2 .stat-title-alt {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.top-center2 .card-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+/* Custom Soft-Pink User Badge Icon Box */
+.top-center2 .user-icon-bg {
+  background-color: #ffeef1; /* Light soft pink hue matching the design */
+  color: #111111;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Typography Overrides for the Trend Footnote Line */
+.top-center2 .trend.positive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+.top-center2 .trend.positive button {
+  background-color: transparent;
+  color: #2da44e; /* Bright green text variant for tracking upward growth */
+  border: none;
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+}
+
+.top-center2 .trend-sub {
+  color: #757575;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+/* Core Center Container Styles */
+.center {
+  grid-area: center;
+  background-color: #fdebee;
+  border-radius: 24px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Stands the image perfectly flush with the bottom border */
+    z-index: 5;
+
+}
+
+/* Big Decorative Pink Circle Background */
+.center .background-circle {
+  position: absolute;
+  width: 420px;
+  height: 365px;
+  background-color: #fbcad2;
+  border-radius: 50%;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  
+}
+
+/* Portrait Image Placement */
+.center .portrait-img {
+  height: 120%;
+  object-fit: contain;
+  position: relative;
+  z-index: 15;
+  bottom: -1px;
+}
+
+/* Reusable styles for white card blocks */
+.center .float-badge {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(220, 90, 110, 0.08);
+  z-index: 3;
+}
+
+.center .badge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.center .badge-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.center .three-dots {
+  color: #b5b5b5;
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+/* Floating Card 1: Project Growth Position */
+.center .project-growth-card {
+  top: 35%;
+  left: 90px;
+  width: 155px;
+  transform: translateY(-50%);
+}
+
+.center .graph-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-size: 2rem;
+}
+
+/* Floating Card 2: Conversion Age Position */
+.center .conversion-age-card {
+  top: 36px;
+  right: 24px;
+  width: 200px;
+}
+
+.center .bar-chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  font-size: 2.5rem;
+}
+
+/* Floating Card 3: Total Plays Capsule Position */
+.center .capsule-badge {
+  position: absolute;
+  bottom: 80px;
+  left: 90px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 10px 20px 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(220, 90, 110, 0.08);
+  z-index: 3;
+}
+
+.center .play-button-icon {
+  background-color: #ff5e7e;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.center .plays-text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.center .plays-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+}
+
+.center .plays-label {
+  font-size: 0.75rem;
+  color: #757575;
+  font-weight: 500;
+}
+
+/* Floating Card 4: Engagement Rate Position */
+.center .engagement-card {
+  bottom: 24px;
+  right: 24px;
+  width: 175px;
+}
+
+.center .heart-icon-wrapper {
+  background-color: #ffeef1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.center .engagement-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #0b1a30;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.center .engagement-subtitle {
+  font-size: 0.75rem;
+  color: #757575;
+  font-weight: 500;
+  margin: 2px 0 8px 0;
+}
+
+.center .growth-metric {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2da44e; /* Green matching dashboard standards */
+}
+
+/* Decorative Ring on Right Edge */
+.center .decorative-ring {
+  
+  position: absolute;
+  right: 110px;
+  bottom: 180px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid #ff5e7e;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.bottom-center1 {
+  grid-area: bottom-center1;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top text and logo section */
+.bottom-center1 .font-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.bottom-center1 .font-info h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.bottom-center1 .font-info p {
+  font-size: 0.9rem;
+  color: #555555;
+  font-weight: 500;
+}
+
+.bottom-center1 .font-icon {
+  background-color: #ffeef1;
+  color: #111111;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Middle color palette row */
+.bottom-center1 .color-palette {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.bottom-center1 .color-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+/* Bottom footer link section */
+.bottom-center1 .card-footer-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111111;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.bottom-center1 .card-footer-action .arrow {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+
+.bottom-center2 {
+  grid-area: bottom-center2;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom-center2-div1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.bottom-center2 h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.bottom-center2 p {
+  font-size: 0.85rem;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.bottom-center2 button {
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.2s ease;
+}
+
+.bottom-center2 button:hover {
+  background-color: #222222;
+}
+
+.bottom-center2 img {
+  height: 90%;
+  max-width: 45%;
+  object-fit: contain;
+  z-index: 1;
+}
+/* Right Column Card Container */
+.right-top {
+  grid-area: right-top;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --- Top Section Layout --- */
+.right-top .team-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  margin-bottom: 20px;
+}
+
+/* Avatar Pill Overlap Stack Mechanism */
+.right-top .avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.right-top .avatar-stack img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff; /* Forms clean white masking border ring gaps */
+  margin-right: -10px; /* Pulls images back-to-back dynamically */
+}
+
+.right-top .avatar-stack .avatar-count {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #29292e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ffffff;
+}
+
+/* Subtle Layout Separation Rule */
+.right-top .divider {
+  border: none;
+  border-top: 1px solid #f0f0f2;
+  margin: 20px 0;
+}
+
+/* --- Bottom Section Layout --- */
+.right-top .clients-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Pinpoints icon alignment cleanly with bottom metric baseline */
+  flex-grow: 1;
+}
+
+.right-top .clients-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-top .section-label {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.right-top .clients-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.right-top .metric-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 12px;
+}
+
+/* Trend Flag */
+.right-top .trend-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.right-top .trend-indicator .rate-percent {
+  color: #ff5e7e; /* Pink-red accent trend typography styling */
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.right-top .trend-indicator .timeframe {
+  color: #757575;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Soft Pink Add-User Quick Access Box */
+.right-top .add-user-badge {
+  background-color: #ffeef1;
+  color: #111111;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+/* Right Bottom: CUBO Branding Card */
+.right-bottom {
+  grid-area: right-bottom;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Brand Logo Layout */
+.right-bottom .brand-logo {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+/* Typography Hierarchy */
+.right-bottom h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.5px;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.right-bottom .brand-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555555;
+  margin: 0;
+}
+
+/* Pill CTA Button Layout */
+.right-bottom .cta-button {
+  background-color: #fdebee; /* Matching soft pink tone */
+  color: #111111;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 200px;
+  transition: opacity 0.2s ease;
+}
+
+.right-bottom .cta-button:hover {
+  opacity: 0.9;
+}
+
+/* Aligns the icon beautifully next to the text */
+.right-bottom .cta-button svg {
+  display: inline-block;
+  vertical-align: middle;
+  
+}

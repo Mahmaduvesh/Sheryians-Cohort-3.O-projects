@@ -1,0 +1,319 @@
+/* Base Resets & Variables */
+:root {
+  --bg-dark: #0d0d0d;
+  --card-white: #ffffff;
+  --card-pink: #fdebee;
+  --card-pink-light: #fff0f2;
+  --text-dark: #111111;
+  --text-muted: #666666;
+  --accent-pink: #ff5e7e;
+  --trend-green: #27ae60;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* 4-Column Grid System Setup */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(140px, auto);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Card Universal Styling */
+.card {
+  background-color: var(--card-white);
+  border-radius: 24px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Color Themes */
+.card-white { background-color: var(--card-white); }
+.card-pink { background-color: var(--card-pink); }
+.card-pink-light { background-color: var(--card-pink-light); }
+.card-dark { 
+  background-color: #16161a; 
+  color: #ffffff;
+}
+
+/* Grid Positioning Assignments */
+.card-brand {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
+
+.card-views {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.card-users {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.card-team {
+  grid-column: 4;
+  grid-row: 1 / span 3;
+}
+
+.card-main-feature {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 15px;
+  position: relative;
+  align-items: center;
+}
+
+.card-agency {
+  grid-column: 1;
+  grid-row: 4 / span 2;
+  min-height: 240px;
+}
+
+.card-font {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+.card-mission {
+  grid-column: 3;
+  grid-row: 5;
+}
+
+.card-cubo {
+  grid-column: 4;
+  grid-row: 4 / span 2;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Component UI Typography & Details */
+h2 { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
+h3 { font-size: 1.1rem; font-weight: 600; line-height: 1.4; }
+p { font-size: 0.85rem; color: var(--text-muted); }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Progress Donut Wheel Chart */
+.progress-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent-pink) 75%, #ecc9cf 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  background-color: var(--card-pink);
+  border-radius: 50%;
+}
+.progress-value, .progress-label {
+  position: relative;
+  z-index: 1;
+}
+.progress-value { font-size: 1.4rem; font-weight: 700; }
+.progress-label { font-size: 0.7rem; color: var(--text-muted); }
+
+/* Typography & Utility Components */
+.trend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.trend.positive { color: var(--trend-green); }
+.trend-sub { color: var(--text-muted); font-weight: 400; }
+.stat-title { font-weight: 500; color: #222; }
+.stat-subtitle { font-size: 0.75rem; }
+
+/* Avatars Elements */
+.avatar-group {
+  display: flex;
+  margin-top: 10px;
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-right: -8px;
+}
+.avatar.count {
+  background-color: #222;
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+
+.client-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.huge-text { font-size: 3.5rem; font-weight: 700; }
+
+/* Buttons & Links Layout */
+.btn-link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  display: inline-block;
+}
+.btn-dark {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: fit-content;
+}
+.btn-pink-pill {
+  background-color: #ffeef1;
+  color: var(--accent-pink);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Inner Complex Feature Layout */
+.profile-image-placeholder {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.avatar-large {
+  font-size: 7rem;
+  background-color: #ffd8df;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mini-card {
+  background: white;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  z-index: 2;
+  position: absolute;
+}
+.mini-growth { top: 40px; left: 20px; width: 110px; }
+.mini-plays { bottom: 40px; left: 20px; display: flex; gap: 8px; align-items: center;}
+.mini-age { top: 40px; right: 20px; width: 110px; }
+.mini-engagement { bottom: 40px; right: 20px; width: 120px; }
+.mini-title { font-size: 0.7rem; font-weight: 600; }
+
+/* Color Swatches Grid Elements */
+.color-palette {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+.card-font .font-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsiveness adjustments for Tablets / Mobile screens */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-brand, .card-team, .card-main-feature, .card-agency, .card-cubo {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+  .card-views, .card-users, .card-font, .card-mission {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .card-brand, .card-team, .card-main-feature, .card-agency, .card-cubo, .card-views, .card-users, .card-font, .card-mission {
+    grid-column: span 1;
+  }
+  .mini-card {
+    position: relative;
+    top: initial !important;
+    left: initial !important;
+    right: initial !important;
+    bottom: initial !important;
+    width: 100% !important;
+  }
+  .card-main-feature {
+    display: flex;
+    flex-direction: column;
+  }
+}
