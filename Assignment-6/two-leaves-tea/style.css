@@ -1,0 +1,275 @@
+@font-face {
+    font-family: Reckless;
+    src: url(./fonts/RecklessCondensedS-TRIAL-Book.woff);
+}
+
+@font-face {
+    font-family: Figtree;
+    src: url(./fonts/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2);
+}
+
+@font-face {
+    font-family: Midnight;
+    src: url(./fonts/midnight-sans-rd-12-medium-trial.otf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Syncopate:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./images/imgi_11_cere-memorial_matcha_wide.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.headline {
+    background-color: #2A2857;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6px;
+    text-transform: uppercase;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    width: 100%;
+}
+
+nav {
+    width: calc(100% - 2rem); 
+    background-color: rgba(255, 254, 253, 0.95); /* Slight transparency looks premium over background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Reckless, sans-serif;
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+    
+    margin: 1rem auto 0 auto; 
+    border: 1px solid #000000;
+    border-radius: 1rem; 
+    position: relative;
+    z-index: 10;
+}
+
+nav i {
+    font-size: 2rem;
+    width: 33%;
+}
+
+nav .nav-part-1 {
+    gap: 1rem;
+    width: 33%;
+    display: none;
+}
+
+.nav-part-1 h3 {
+    font-weight: 300;
+}
+
+nav .nav-part-2 {
+    width: 20%;
+    height: auto;
+    display: flex;
+}
+
+.nav-part-2 img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.nav-part-3 {
+    display: flex;
+    width: 30%;
+    gap: 2rem;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav-part-3 h3 {
+    font-weight: 300;
+    display: none;
+}
+
+.nav-part-3 svg {
+    width: 30px;
+    height: 30px;
+}
+
+#section-1 {
+    width: 100%;  
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;  
+    padding: 2rem;        
+    gap: 1rem;             
+    border-bottom: 1px solid #000;
+}
+
+#section-1 h1 {
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    font-family: Reckless, Helvetica, Arial, sans-serif;
+    color: black;
+    font-weight: 100;
+    line-height: 1.1;        
+    text-align: left;
+    margin: 0;
+}
+
+#section-1 p {
+    font-family: Helvetica, Arial, sans-serif; 
+    max-width: 400px;        
+    text-align: left;
+    color: #333;             
+    margin: 0;
+    line-height: 1.5;
+}
+
+.promo-text {
+    font-size: clamp(1rem, 1.1vw, 1.2rem);    
+    color: #222;             
+}
+
+.coupon-text {
+    font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+    color: #000;
+}
+
+.date-validity {
+    font-size: clamp(0.9rem, 1vw, 1.05rem);
+    font-style: italic;
+    color: #444;
+}
+
+.shop-btn {
+    display: inline-block;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #232354;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.85rem 2.5rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+#section-2{
+    width: 100%;
+    height: 100vh;
+    padding: 8rem 1rem;
+    
+}
+
+#section-2 .section2-text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Reckless;
+    text-align: center;
+}
+
+.section2-text h1{
+     font-size: clamp(2.2rem,5vw,4rem);
+     font-weight: 200;
+     width: 80%;
+    font-family: Reckless, Helvetica, Arial, sans-serif;
+}
+
+
+#section-2 .btn-1{
+    padding: 0.1rem 0.5rem;
+    font-size: 3rem;
+    font-family: Midnight;
+    font-weight: 600;
+    background-color: #DAAEEA;
+    border-radius: 1.2rem;
+    text-transform: uppercase;
+    margin-top: 5rem;
+    rotate: -5deg;
+    letter-spacing: 2px;
+}
+
+
+@media (min-width: 1024px) {
+    nav {
+        width: calc(100% - 4rem);
+        margin: 1.5rem auto 0 auto;
+        padding: 0.5rem 2rem;
+        font-size: 0.8rem;
+        border-radius: 1.5rem;
+    }
+    
+    nav .nav-part-1 {
+        display: flex;
+        width: 30%;
+    }
+    
+    nav i {
+        display: none;
+    }
+
+    .nav-part-1 h3 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    nav .nav-part-2 {
+        width: 10%;
+        justify-content: center;
+    }
+    
+    .nav-part-2 img {
+        width: 120px;
+    }
+
+    .nav-part-3 {
+        width: 30%;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    
+    .nav-part-3 h3 {
+        font-weight: 300;
+        display: block;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    #section-1 {
+        padding: 3rem 5%;
+    }
+
+    #section-1 h1 {
+        max-width: 450px;
+    }
+    
+    #section-1 p {
+        max-width: 450px;
+    }
+
+    .shop-btn {
+        width: fit-content;
+        padding: 1rem 4rem;
+        border-radius: 1.2rem;
+    }
+}
