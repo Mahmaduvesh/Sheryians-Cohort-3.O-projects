@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <header class="header">
+        <button class="icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <div class="logo">
+          <img src="./images/logo.svg" alt="Pokémon Logo" />
+        </div>
+        <button class="icon-btn"><i class="fa-solid fa-sun"></i></button>
+      </header>
+
+      <section class="search-filter-section">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Search for a Pokémon..." />
+        </div>
+        <div class="filter-controls">
+          <button class="filter-dropdown">
+            Filter by types (1) <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <button class="icon-btn sort-btn">
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+          </button>
+        </div>
+      </section>
+
+      <main class="cards-container">
+        <div class="card card-grass">
+          <div class="card-header">
+            <span class="pokedex-number">#0908</span>
+            <button class="heart-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="image-container">
+            <img src="./images/1.png" alt="Meowscarada" />
+          </div>
+          <div class="card-footer">
+            <h3 class="pokemon-name">Meowscarada</h3>
+            <div class="tag-row">
+              <span class="type-tag tag-grass"
+                ><i class="fa-solid fa-leaf"></i> GRASS</span
+              >
+              <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-dark">
+          <div class="card-header">
+            <span class="pokedex-number">#0624</span>
+            <button class="heart-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="image-container">
+            <img src="./images/2.webp" alt="Pawniard" />
+          </div>
+          <div class="card-footer">
+            <h3 class="pokemon-name">Pawniard</h3>
+            <div class="tag-row">
+              <span class="type-tag tag-dark"
+                ><i class="fa-solid fa-moon"></i> DARK / STEEL</span
+              >
+              <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-fire">
+          <div class="card-header">
+            <span class="pokedex-number">#0229</span>
+            <button class="heart-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="image-container">
+            <img src="./images/3.png" alt="Houndoom" />
+          </div>
+          <div class="card-footer">
+            <h3 class="pokemon-name">Houndoom</h3>
+            <div class="tag-row">
+              <span class="type-tag tag-fire"
+                ><i class="fa-solid fa-fire"></i> DARK / FIRE</span
+              >
+              <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-psychic">
+          <div class="card-header">
+            <span class="pokedex-number">#0686</span>
+            <button class="heart-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="image-container">
+            <img src="./images/4.png" alt="Inkay" />
+          </div>
+          <div class="card-footer">
+            <h3 class="pokemon-name">Inkay</h3>
+            <div class="tag-row">
+              <span class="type-tag tag-psychic"
+                ><i class="fa-solid fa-droplet"></i> DARK / PSYCHIC</span
+              >
+              <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="bottom-nav">
+        <div class="nav-item">
+          <div class="nav-icon icon-blue">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <div class="nav-text">
+            <h4>Explore</h4>
+            <p>Discover all your favorite Pokémon</p>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <div class="nav-icon icon-green">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <div class="nav-text">
+            <h4>Filter</h4>
+            <p>Find Pokémon by types and abilities</p>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <div class="nav-icon icon-yellow">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="nav-text">
+            <h4>Collection</h4>
+            <p>Save and manage your collection</p>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <div class="nav-icon icon-purple">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+          <div class="nav-text">
+            <h4>Stats</h4>
+            <p>View stats and learn about Pokémon</p>
+          </div>
+        </div>
+      </footer>
+
+      <div class="copyright">
+        <i class="fa-solid fa-circle-dot"></i>
+        <p>© 2026 Pokémon. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

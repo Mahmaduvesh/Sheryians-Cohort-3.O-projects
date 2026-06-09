@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #f3f4fd 0%, #e9ecfd 100%);
+  --panel-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  
+  --grass-color: #22c55e;
+  --grass-bg: #f0fdf4;
+  --dark-color: #475569;
+  --dark-bg: #f1f5f9;
+  --fire-color: #ef4444;
+  --fire-bg: #fef2f2;
+  --psychic-color: #3b82f6;
+  --psychic-bg: #eff6ff;
+}
+
+body {
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Base Layout Structure */
+.dashboard-container {
+  width: 100%;
+  max-width: 1100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.icon-btn {
+  background: white;
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: #f8fafc;
+}
+
+/* Header Elements */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  height: 45px;
+}
+
+/* Filters & Inputs */
+.search-filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 14px 14px 45px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  background-color: white;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.filter-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-dropdown {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 0 20px;
+  height: 45px;
+  border-radius: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Pokemon Grid & Cards */
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  flex: 1;
+  min-width: 230px;
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.card-grass { border-color: #e2fbe9; }
+.card-dark { border-color: #f1f5f9; }
+.card-fire { border-color: #fee2e2; }
+.card-psychic { border-color: #dbeafe; }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokedex-number {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.heart-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  margin: 15px 0;
+}
+
+.image-container img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pokemon-name {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.tag-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.type-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-grass { color: var(--grass-color); background: var(--grass-bg); }
+.tag-dark { color: var(--dark-color); background: var(--dark-bg); }
+.tag-fire { color: var(--fire-color); background: var(--fire-bg); }
+.tag-psychic { color: var(--psychic-color); background: var(--psychic-bg); }
+
+.arrow-btn {
+  background: #f8fafc;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.nav-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.icon-blue { background: #e0f2fe; color: #0284c7; }
+.icon-green { background: #dcfce7; color: #16a34a; }
+.icon-yellow { background: #fef9c3; color: #ca8a04; }
+.icon-purple { background: #f3e8ff; color: #9333ea; }
+
+.nav-text h4 {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.nav-text p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Footer Section */
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.copyright i {
+  font-size: 0.6rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+  .cards-container {
+    justify-content: center;
+  }
+  .bottom-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
