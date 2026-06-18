@@ -112,7 +112,7 @@ taskForm.addEventListener("submit", (e) => {
   }
 
   updateCounts();
-  saveTasks(); // Persist changes
+  saveTasks(); 
   taskForm.reset();
   modal.classList.remove("active");
 });
@@ -127,7 +127,7 @@ document.addEventListener("click", (e) => {
       .querySelectorAll(`[data-id="${cardId}"]`)
       .forEach((card) => card.remove());
     updateCounts();
-    saveTasks(); // Persist changes
+    saveTasks(); 
   }
 });
 
@@ -202,7 +202,6 @@ function loadTasks() {
   updateCounts();
 }
 
-// --- Helpers ---
 function updateCounts() {
   const todo = document.querySelectorAll("#todo-column .task-card").length;
   const prog = document.querySelectorAll("#progress-column .task-card").length;
