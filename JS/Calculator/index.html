@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-card">
+        <div class="header">
+          <h1>Todo List</h1>
+          <p>Stay organized and productive</p>
+        </div>
+
+        <div class="input-section">
+          <input type="text" id="inp" placeholder="Add a new task..." />
+          <button class="add-btn" id="addbtn">Add Task</button>
+        </div>
+
+        <!-- <div class="filter-section">
+          <button class="active">All</button>
+          <button>Pending</button>
+          <button>Completed</button>
+        </div> -->
+
+        <div class="task-list">
+          <div class="task-item">
+            <div class="task-left">
+              <span>Complete UI Design</span>
+            </div>
+
+            <div class="task-actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-left">
+              <span>database</span>
+            </div>
+
+            <div class="task-actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="footer">
+          <span>3 Tasks Total</span>
+          <button class="clear-btn">Clear Completed</button>
+        </div> -->
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
